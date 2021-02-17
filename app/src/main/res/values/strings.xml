@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Weather Forecast</string>
+    <string name="server_date">server data time - $</string>
+    <string name="temperature">$ ℃</string>
+    <string name="wind_speed">$ m/s</string>
+    <string name="humidity">humidity - $</string>
+    <string name="pressure">pressure - $</string>
+    <string name="default_city_name">New York</string>
+
+</resources>

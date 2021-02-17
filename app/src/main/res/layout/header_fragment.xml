@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="androidx.lifecycle.MutableLiveData" />
+        <variable
+            name="weatherReceiver" type="com.mvcage.weatherforecast.viewmodel.WeatherReceiver" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/text_input_city_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:autofillHints=""
+            android:hint="@string/default_city_name"
+
+            android:inputType="textPersonName"
+            android:onTextChanged="@{weatherReceiver::getWeatherByCityName}"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/server_date"
+            android:text="@{weatherReceiver.weatherRealTime.gatDate()}"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+
+</layout>
